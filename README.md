@@ -35,3 +35,10 @@ A mobile-first wallet application built with React, TypeScript, and Vite. This p
    ```bash
    pnpm run dev
    ```
+# Screnshots of project:
+## Transactions list:
+<img width="355" height="758" alt="image" src="https://github.com/user-attachments/assets/33858d31-ad87-489c-8fa0-077c9643d4a3" />
+
+## Transaction details:
+<img width="353" height="755" alt="image" src="https://github.com/user-attachments/assets/d95058fe-59f6-47bd-9ed6-94572084131d" />
+
