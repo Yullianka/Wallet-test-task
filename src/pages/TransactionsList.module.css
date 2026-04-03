@@ -1,0 +1,103 @@
+.page {
+  background-color: #f2f2f7;
+  min-height: 100vh;
+  padding: 16px;
+}
+
+.topGrid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 24px;
+}
+
+.cardsColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 14px 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.cardLabel {
+  color: #000;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.balanceAmount {
+  font-size: 28px;
+  font-weight: 700;
+  color: #000;
+  letter-spacing: -0.5px;
+  margin-bottom: 4px;
+}
+
+.subText {
+  color: #8e8e93;
+  font-size: 13px;
+}
+
+.pointsValue {
+  font-size: 13px;
+  font-weight: 400;
+  color: rgb(142, 142, 147);
+  letter-spacing: -0.3px;
+}
+
+.noPaymentCard {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 14px 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.noPaymentLabel {
+  font-weight: 600;
+  font-size: 13px;
+  color: #000;
+  margin-bottom: 6px;
+}
+
+.noPaymentDesc {
+  color: #8e8e93;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.checkCircle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #f2f2f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  align-self: flex-end;
+  margin-top: 12px;
+}
+
+.sectionTitle {
+  font-size: 22px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 12px;
+  margin-top: 0;
+}
+
+.listContainer {
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}

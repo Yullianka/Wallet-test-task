@@ -1,0 +1,80 @@
+.page {
+  background-color: #f2f2f7;
+  min-height: 100vh;
+  padding: 16px;
+  position: relative;
+}
+
+.backButton {
+  background: none;
+  border: none;
+  color: #007aff;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.header {
+  text-align: center;
+  margin-top: 32px;
+  margin-bottom: 40px;
+}
+
+.amount {
+  font-size: 56px;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  color: #000;
+}
+
+.name {
+  font-size: 16px;
+  color: #8e8e93;
+  margin-top: 8px;
+}
+
+.date {
+  font-size: 14px;
+  color: #8e8e93;
+  margin-top: 4px;
+}
+
+.detailsCard {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.statusRow {
+  margin-bottom: 4px;
+}
+
+.statusText {
+  font-weight: 600;
+  font-size: 15px;
+  color: #000;
+}
+
+.cardName {
+  color: #8e8e93;
+  font-size: 14px;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  color: #000;
+  font-size: 15px;
+}
+
+.loading {
+  padding: 24px;
+  text-align: center;
+}

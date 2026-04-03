@@ -1,0 +1,120 @@
+.link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  padding: 12px 12px 12px 16px;
+  background-color: #fff;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.iconWrapper {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin-right: 12px;
+  flex-shrink: 0;
+  font-size: 18px;
+}
+
+.contentWrapper {
+  flex: 1;
+  min-width: 0;
+}
+
+.topRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 2px;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 15px;
+  color: #000;
+}
+
+.amountWrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  padding-left: 8px;
+}
+
+.amount {
+  font-weight: 500;
+  font-size: 15px;
+  color: #000;
+}
+
+.middleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2px;
+}
+
+.description {
+  font-size: 13px;
+  color: #8e8e93;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 8px;
+}
+
+.cashback {
+  font-size: 11px;
+  background-color: #f2f2f7;
+  color: #8e8e93;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  flex-shrink: 0;
+  line-height: 16px;
+}
+
+.bottomRow {
+  font-size: 13px;
+  color: #8e8e93;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.chevron {
+  margin-left: 8px;
+  color: #c7c7cc;
+  font-size: 12px;
+}
+
+.ikeaLogo {
+  color: #ffda1a;
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+}
+
+.targetLogo {
+  color: #cc0000;
+  font-size: 24px;
+}
+
+.bgPayment { background: linear-gradient(135deg, #ffd166 0%, #ff8a00 30%, #f72585 70%, #7209b7 100%); }
+.bgApple { background: #555; }
+.bgIKEA { background: #0051ba; }
+.bgTarget { background: #fff; }
+.bgStarbucks { background: #00704a; }
+.bgNetflix { background: #e50914; }
+.bgAiralo { background: #1a1a2e; }
+.bgDefault { background: #555; }
