@@ -1,18 +1,18 @@
+import type { Transaction } from '../types';
+import { WEEKDAYS, MS_PER_DAY } from '../constants/app';
+
+
+function startOfDay(date: Date): Date {
+  return new Date(date.getFullYear(), date.getMonth(), date.getDate());
+}
+
 export function formatTransactionDate(dateStr: string): string {
   const date = new Date(dateStr);
-  const now = new Date();
-
-  const startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-  const startOfDate = new Date(date.getFullYear(), date.getMonth(), date.getDate());
-  const diffDays = Math.round((startOfToday.getTime() - startOfDate.getTime()) / (1000 * 60 * 60 * 24));
+  const diffDays = Math.round((startOfDay(new Date()).getTime() - startOfDay(date).getTime()) / MS_PER_DAY);
 
   if (diffDays === 0) return 'Today';
   if (diffDays === 1) return 'Yesterday';
-
-  if (diffDays > 1 && diffDays <= 7) {
-    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    return days[date.getDay()];
-  }
+  if (diffDays > 1 && diffDays <= 7) return WEEKDAYS[date.getDay()];
 
   const m = date.getMonth() + 1;
   const d = date.getDate();
@@ -32,4 +32,9 @@ export function formatDetailDate(dateStr: string): string {
 
 export function formatCurrency(amount: number): string {
   return amount.toFixed(2);
+}
+
+export function formatTransactionAmount(transaction: Transaction): string {
+  const prefix = transaction.type === 'Payment' ? '+$' : '$';
+  return `${prefix}${formatCurrency(transaction.amount)}`;
 }

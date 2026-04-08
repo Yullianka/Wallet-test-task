@@ -48,14 +48,23 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
-.statusRow {
-  margin-bottom: 4px;
-}
-
 .statusText {
   font-weight: 600;
   font-size: 15px;
   color: #000;
+  margin-bottom: 4px;
+}
+
+.description {
+  font-size: 14px;
+  color: #8e8e93;
+  margin-bottom: 12px;
+}
+
+.metaRow {
+  font-size: 14px;
+  color: #8e8e93;
+  margin-bottom: 4px;
 }
 
 .cardName {
