@@ -1,22 +1,26 @@
-import { useState } from 'react';
+import { useMemo } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { TransactionItem } from '../components/TransactionItem';
 import { calculateDailyPoints, formatPoints } from '../utils/points';
+import { formatCurrency } from '../utils/date';
 import { useTransactions } from '../hooks/useTransactions';
 import { CARD_LIMIT, MAX_TRANSACTIONS } from '../constants/app';
 import styles from './TransactionsList.module.css';
 
 export const TransactionsList = (): React.JSX.Element => {
-  const { transactions } = useTransactions();
-  const [balance] = useState<number>(() => Math.floor(Math.random() * CARD_LIMIT * 100) / 100);
+  const { transactions, loading, error, balance } = useTransactions();
 
   const month = new Intl.DateTimeFormat('en-US', { month: 'long' }).format(new Date());
   const available = CARD_LIMIT - balance;
   const points = calculateDailyPoints(new Date());
-  const latestTransactions = [...transactions]
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-    .slice(0, MAX_TRANSACTIONS);
+  const latestTransactions = useMemo(
+    () =>
+      [...transactions]
+        .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+        .slice(0, MAX_TRANSACTIONS),
+    [transactions],
+  );
 
   return (
     <div className={styles.page}>
@@ -24,9 +28,9 @@ export const TransactionsList = (): React.JSX.Element => {
         <div className={styles.cardsColumn}>
           <div className={styles.card}>
             <div className={styles.cardLabel}>Card Balance</div>
-            <div className={styles.balanceAmount}>${balance.toFixed(2)}</div>
+            <div className={styles.balanceAmount}>${formatCurrency(balance)}</div>
             <div className={styles.subText}>
-              ${available.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} Available
+              ${formatCurrency(available)} Available
             </div>
           </div>
 
@@ -51,7 +55,9 @@ export const TransactionsList = (): React.JSX.Element => {
 
       <h2 className={styles.sectionTitle}>Latest Transactions</h2>
       <div className={styles.listContainer}>
-        {latestTransactions.map((tx) => (
+        {loading && <div>Loading transactions...</div>}
+        {error && <div>Failed to load transactions.</div>}
+        {!loading && !error && latestTransactions.map((tx) => (
           <TransactionItem key={tx.id} transaction={tx} />
         ))}
       </div>

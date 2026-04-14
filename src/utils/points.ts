@@ -8,12 +8,17 @@ function getSeasonStart(date: Date): Date {
   return new Date(month < 2 ? year - 1 : year, 11, 1);         // Winter: Dec 1
 }
 
+function diffCalendarDays(a: Date, b: Date): number {
+  const aUtc = Date.UTC(a.getFullYear(), a.getMonth(), a.getDate());
+  const bUtc = Date.UTC(b.getFullYear(), b.getMonth(), b.getDate());
+  return Math.round((aUtc - bUtc) / 86400000);
+}
+
 export function calculateDailyPoints(date: Date): number {
   const seasonStart = getSeasonStart(date);
-  const msPerDay = 1000 * 60 * 60 * 24;
-  const dayOfSeason = Math.floor((date.getTime() - seasonStart.getTime()) / msPerDay) + 1;
+  const dayOfSeason = diffCalendarDays(date, seasonStart) + 1;
 
-  if (dayOfSeason === 1) return 2;
+  if (dayOfSeason <= 1) return 2;
   if (dayOfSeason === 2) return 3;
 
   let dayMinus2 = 2;

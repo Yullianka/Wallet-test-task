@@ -5,6 +5,7 @@ export interface TransactionsState {
   transactions: Transaction[];
   loading: boolean;
   error: Error | null;
+  balance: number;
 }
 
 export const TransactionsContext = createContext<TransactionsState | null>(null);
